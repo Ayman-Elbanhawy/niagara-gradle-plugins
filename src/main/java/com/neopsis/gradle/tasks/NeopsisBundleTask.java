@@ -112,8 +112,9 @@ public class NeopsisBundleTask extends Zip {
                 modVer = modVer + module.getVersion();
 
 
-                String src        = module.getName() + "-*-" + modVer + ".jar";
-                String renameFrom = module.getName() + "-(.+)-" + modVer + ".jar";
+                String src        = module.getName() + "*" + modVer + ".jar";
+                System.out.println("Selected files '" + src + "'");
+                String renameFrom = module.getName() + "-(ux|rt|wb|se|doc|)(\\-?)" + modVer + ".jar";
                 String renameTo   = module.getName() + "-$1.jar";
                 include(src);
                 rename(renameFrom, renameTo);
@@ -121,6 +122,7 @@ public class NeopsisBundleTask extends Zip {
                 System.out.println("Adding to bundle: " + module.getName() + "-" + modVer);
             }
 
+            rename("\\-\\.jar", "\\.jar");
             writer.close();
             include(README_FILE_NAME);
 

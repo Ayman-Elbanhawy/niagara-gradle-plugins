@@ -14,7 +14,7 @@ plugins {
 }
 
 group   = "com.neopsis"
-version = "1.0.1"
+version = "1.0.2"
 
 gradlePlugin {
     website.set("https://github.com/neopsis")
