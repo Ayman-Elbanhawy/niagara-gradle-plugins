@@ -24,13 +24,13 @@ The plugin is hosted on the great free repository service `https://repsy.io`, se
 ### Prepare `${USER_HOME}/.gradle/gradle.properties`
 
 Before you start using the plugin, you have to define some Gradle properties in your user gradle.properties file.
-In the time of writing this README the Neopsis plugin version is 1.0.1. 
+In the time of writing this README the Neopsis plugin version is 1.0.2. 
 
 ```
 # Set the Neopsis and Niagara plugin versions
 systemProp.gradlePluginVersion=7.6.17
 systemProp.settingsPluginVersion=7.6.3
-systemProp.neopsisPluginVersion=1.0.1
+systemProp.neopsisPluginVersion=1.0.2
 
 # Map with installed Niagara releases. 
 niagara_releases = {      \
@@ -137,7 +137,7 @@ See the chapter `Bundle release` how to create a bundle.
 
 ##### Bundle section examples
 
-* Module version will be <niagara-major>.<niagara-minor>.3.2, i.e. 4.10.3.2, 4.11.3.2, 4.12.3.2, 4.13.32. etc.
+* Module version will be `<niagara-major>.<niagara-minor>.3.2`, i.e. 4.10.3.2, 4.11.3.2, 4.12.3.2, 4.13.32. etc.
   depending on the Niagara version you are compiling against.
 
 ```
@@ -159,14 +159,14 @@ bundle {
 }
 ```
 
-* Module version will be 1.<niagara-minor>.24. i.e 1.10.24, 1.11.24, 1.12.24, 1.13.24, etc. depending on the Niagara
+* Module version will be `1.<niagara-minor>.24` i.e 1.10.24, 1.11.24, 1.12.24, 1.13.24, etc. depending on the Niagara
   version you are compiling against.
 
 ```
 bundle {
   ...
   followNiagaraNumbering = false
-  moduleVersion = "1.${niagaraMinorVersion}.17.1"
+  moduleVersion = "1.${niagaraMinorVersion}.24"
   ...
 }
 ```
